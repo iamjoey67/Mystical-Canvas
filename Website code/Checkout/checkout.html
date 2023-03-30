@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="checkout.css" />
+    <link rel="icon" href="/images/Fiverr Canvas for Mystical Canvas.png" />
+    <title>Checkout</title>
+  </head>
+  <body>
+    <div class="announcement">
+      <p class="announcement-text">Free Shipping 💖</p>
+    </div>
+
+    <header class="header">
+      <!-- Menu button -->
+      <menu class="menu">
+        <div class="buttons-holder">
+          <button class="menu-btn btn btn-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
+              />
+            </svg>
+          </button>
+        </div>
+      </menu>
+
+      <!-- Moon sprit -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="moon-sprit"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+        />
+      </svg>
+
+      <!-- This combines the header image and text -->
+      <button class="image-text">
+        <!-- Logo Image -->
+        <img
+          src="/images/Fiverr Canvas for Mystical Canvas.png"
+          alt="The Mystical Realm Logo"
+          class="header-img"
+        />
+
+        <!-- Text under image -->
+        <h1 class="h1-header-image-text">Mystical Canvas</h1>
+      </button>
+      <!-- Sun sprit -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="sun-sprit"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+        />
+      </svg>
+      <div class="back">
+        <p class="back-text">
+          This back button will send you back to the product page, and will
+          reset your cart.
+        </p>
+      </div>
+    </header>
+
+    <itemdisplay class="item-display">
+      <h1 class="item-checkout-h1">Checkout Items</h1>
+      <ul class="items-list"></ul>
+      <total class="total">Total : $00.00</total>
+    </itemdisplay>
+
+    <!-- Hidden form that holds users data -->
+    <form id="my-form" action="https://formspree.io/f/xoqznyyk" method="POST">
+      <label> Hidden Email:</label>
+      <input type="email" name="email" id="hidden-email" />
+      <label> Hidden Message:</label>
+      <input type="text" name="message" id="hidden-message" />
+      <input
+        type="hidden"
+        name="_next"
+        value="../Confirmation/confirmation.html"
+      />
+      <p id="my-form-status"></p>
+    </form>
+
+    <!-- Shipping  -->
+    <h1 class="shipping-h1">Shipping Information</h1>
+    <!-- The shipping container = form -->
+    <shipping
+      class="shipping"
+      id="shipping-form"
+      action="https://formspree.io/f/xoqznyyk"
+      method="POST"
+    >
+      <div class="label-containers">
+        <!-- Name -->
+        <label for="name" class="name-label all-labels">Name: </label>
+        <input
+          type="text"
+          name="Name"
+          class="name-input all-inputs"
+          placeholder="Full Name"
+          required
+        />
+        <!-- Address -->
+        <label for="address" class="address-label all-labels">Address: </label>
+        <input
+          type="text"
+          name="Address"
+          class="address-input all-inputs"
+          placeholder="Address"
+          required
+        />
+      </div>
+      <div class="label-containers label-container2">
+        <!-- Special Details -->
+        <label for="special" class="special-label all-labels"
+          >Special Shipping Information:
+        </label>
+        <input
+          type="text"
+          name="Special-info"
+          class="special-input all-inputs"
+          placeholder="Not Required"
+        />
+
+        <!-- City -->
+        <label for="city" class="city-label all-labels">City: </label>
+        <input
+          type="text"
+          name="City"
+          class="city-input all-inputs"
+          placeholder="City"
+          required
+        />
+      </div>
+      <div class="label-containers">
+        <!-- State -->
+        <label for="state" class="state-label all-labels">State: </label>
+        <input
+          type="text"
+          name="State"
+          class="state-input all-inputs"
+          placeholder="State"
+          required
+        />
+
+        <!-- Zip -->
+        <label for="zip" class="zip-label all-labels">Zip Code: </label>
+        <input
+          type="number"
+          name="Zip"
+          class="zip-input all-inputs"
+          placeholder="Zip Code"
+          required
+        />
+      </div>
+      <div class="label-containers">
+        <!-- Email -->
+        <label for="email" class="email-label all-labels">Email: </label>
+        <input
+          type="email"
+          name="Email"
+          class="email-input all-inputs"
+          placeholder="Email for shipping updates"
+          required
+        />
+      </div>
+    </shipping>
+    <div class="shipping-btn-holder">
+      <button class="shipping-btn">Continue To Payment</button>
+      <h1 class="disclaimer">
+        Can't access payment until shipping information is filled 💖
+      </h1>
+    </div>
+
+    <paypal class="paypal">
+      <h1 class="payment-h1">Payment Information</h1>
+
+      <!-- This is the paypal button connected to the site -->
+      <div id="smart-button-container">
+        <div style="text-align: center">
+          <div id="paypal-button-container"></div>
+        </div>
+      </div>
+      <script
+        src="https://www.paypal.com/sdk/js?client-id=AeOnvlWYDzK4ubxLGZnMTmbJ-zRNkBGMeSKoSmx0IOHhM2t8J4M2C2ajD-n1KQQ0pTOaEA1prSkrd8-C&enable-funding=venmo&currency=USD"
+        data-sdk-integration-source="button-factory"
+      ></script>
+    </paypal>
+
+    <footer class="footer">
+      <div class="footer-section">
+        <h1 class="h1-footer">Terms and policies</h1>
+        <a href="../About us/aboutus.html#return" class="p-footer"
+          >30 day return policy</a
+        >
+        <a
+          href="../About us/aboutus.html"
+          class="p-footer footer-shippingpolicy"
+          >Shipping policy</a
+        >
+      </div>
+      <div class="footer-section">
+        <h1 class="h1-footer">About us</h1>
+        <a href="../About us/aboutus.html#aboutus" class="p-footer"
+          >Contact us</a
+        >
+      </div>
+      <a href="#" class="footer-section footer-link">
+        <h1 class="h1-footer">Subscribe</h1>
+        <img
+          src="/images/Fiverr Canvas for Mystical Canvas.png"
+          alt="The Mystical Realm Logo"
+          class="footer-img"
+        />
+      </a>
+    </footer>
+
+    <popup class="popup-shipping">
+      <div class="popup-card">
+        <h1 class="popup-text">
+          To continue to payment section please fill out these fields:
+        </h1>
+        <ul class="selected-fields"></ul>
+        <button class="popup-back-btn">Back</button>
+      </div>
+    </popup>
+    <script src="checkout.js"></script>
+  </body>
+</html>

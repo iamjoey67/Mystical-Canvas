@@ -1,0 +1,483 @@
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+-Font sizes (rem)
+1.0 / 1.2 / 1.4 / 1.6 / 1.8 / 2.0
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+- Letter spacing
+-0.5px
+0.75px
+
+Color Pallet:
+#8865ff
+#6c50cc
+#FF6FA5
+#FFDAC0
+#D3D3D3
+#000000
+#fdf2e9
+-----
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9)
+#555
+#333
+ */
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Lato:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* This makes it so we can use rem, making all numbers equal */
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+  line-height: 1.2;
+  font-weight: 400;
+  overflow-x: hidden;
+  background-color: #ffdac0;
+}
+
+/************************************/
+/* GENERAL USE*/
+/************************************/
+
+.btn:link,
+.btn:visited {
+  transition: all 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:active {
+  color: #ff6fa5;
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.starter-container {
+  margin-bottom: 4.8rem;
+  max-width: auto;
+}
+
+.p {
+  padding: 1.2rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5rem;
+}
+
+/************************************/
+/* Announcement*/
+/************************************/
+
+.announcement {
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to right, #8865ff, #ff6fa5);
+}
+
+.announcement-text {
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #000;
+}
+
+/************************************/
+/* HEADER, logo with menu/cart */
+/************************************/
+
+/* Styles for header buttons */
+.btn-btn {
+  height: 6.6rem;
+  width: 6.6rem;
+  border-radius: 0.75rem;
+  color: #8865ff;
+  background-color: #000;
+  border-style: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.menu {
+  margin: auto;
+  position: relative;
+}
+
+.menu-on {
+  background-color: #ffdac0;
+}
+
+.hide {
+  display: none;
+  flex-direction: column;
+  gap: 2.3rem;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6rem;
+  background-color: #333;
+  border-right: 0.5rem solid #333;
+  border-bottom: 0.5rem solid #333;
+
+  position: absolute;
+  z-index: 2;
+}
+
+.showing {
+  display: flex;
+  transition: all 2.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cart-btn {
+  margin: auto;
+}
+
+.header-img {
+  height: 12rem;
+}
+
+/* Text under image */
+.h1-header-image-text {
+  font-size: 3.2rem;
+  font-family: Itim;
+  background-image: linear-gradient(to right, #8865ff, #ff6fa5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.image-text {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  background-color: #333;
+  border: 1px solid transparent;
+}
+/* Messes with the headers links */
+.links:link,
+.links:visited {
+  display: flex;
+  text-decoration: none;
+  color: #8865ff;
+  font-weight: 700;
+  font-size: 2rem;
+  transition: all 0.3s;
+  margin-bottom: 1.1rem;
+}
+.links:hover,
+.links:active {
+  color: #ff6fa5;
+}
+
+.buttons-holder {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Moon and  Sprit */
+
+.moon-sprit,
+.sun-sprit {
+  color: #ffdac0;
+  width: auto;
+  height: 6.6rem;
+  margin: auto;
+}
+.moon-sprit {
+}
+
+.sun-sprit {
+}
+
+/* This is for the cart number icon*/
+.cart-items {
+  position: absolute;
+  top: 9.5%;
+  right: 4.5%;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  color: #8865ff;
+  background-color: #ffdac0;
+  padding: 1.2rem 1.6rem;
+  border-radius: 50%;
+  border: 1px solid #000;
+  z-index: 99;
+  transition: all 0.2s;
+
+  visibility: hidden;
+}
+
+.cart-items-display {
+  visibility: visible;
+}
+
+/************************************/
+/* Shipping */
+/************************************/
+
+.shipping {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 8rem auto;
+  gap: 1.6rem;
+  background-color: #d5d5d5;
+  padding: 7rem 8rem;
+  width: 50%;
+
+  border-radius: 11px;
+  box-shadow: 2px 2px 10px #000;
+}
+
+.h1-shipping {
+  font-size: 4.6rem;
+  font-weight: 700;
+  border-bottom: 1px solid #000;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.process-item {
+  font-size: 2.3rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#process-item1 {
+}
+#process-item2 {
+}
+#process-item3 {
+}
+
+/************************************/
+/* Return*/
+/************************************/
+.return {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 8rem auto;
+  gap: 1.6rem;
+  background-color: #c0c0c0;
+  padding: 7rem 8rem;
+  width: 50%;
+
+  border-radius: 11px;
+  box-shadow: 2px 2px 10px #000;
+}
+
+.return-h1 {
+  font-size: 4.6rem;
+  font-weight: 700;
+  border-bottom: 1px solid #000;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.return-text {
+  font-size: 2.3rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  text-align: center;
+}
+/************************************/
+/* Email and message from user */
+/************************************/
+
+.aboutus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin: 8rem auto;
+  gap: 1.6rem;
+  background-color: #d5d5d5;
+  padding: 7rem 8rem;
+  width: 50%;
+
+  border-radius: 11px;
+  box-shadow: 2px 2px 10px #000;
+}
+
+.aboutus-header {
+  font-size: 4.6rem;
+  font-weight: 700;
+  border-bottom: 1px solid #000;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.aboutus-email {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.aboutus-text {
+  font-size: 2.3rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+/************************************/
+/* Media Queries, */
+/************************************/
+@media (max-width: 950px) {
+  .h1-shipping {
+    font-size: 3.4rem;
+  }
+
+  .process-item {
+    font-size: 2rem;
+  }
+
+  .return-h1 {
+    font-size: 3.8rem;
+  }
+
+  .return-text {
+    font-size: 2rem;
+  }
+
+  .aboutus-header {
+    font-size: 3.8rem;
+  }
+
+  .aboutus-email {
+    font-size: 2rem;
+  }
+
+  .aboutus-text {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 790px) {
+  .shipping {
+    padding: 4rem 3rem;
+  }
+
+  .h1-shipping {
+    font-size: 2.6rem;
+  }
+
+  .return {
+    padding: 4rem 3rem;
+  }
+
+  .process-item {
+    font-size: 1.6rem;
+  }
+
+  .return-h1 {
+    font-size: 3rem;
+  }
+
+  .return-text {
+    font-size: 1.6rem;
+  }
+
+  .aboutus {
+    padding: 4rem 3rem;
+  }
+
+  .aboutus-header {
+    font-size: 3.4rem;
+  }
+
+  .aboutus-text {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 685px) {
+  .moon-sprit {
+    display: none;
+  }
+
+  .sun-sprit {
+    display: none;
+  }
+
+  .h1-shipping {
+    font-size: 2.4rem;
+  }
+
+  .process-item {
+    font-size: 1.2rem;
+  }
+
+  .return-h1 {
+    font-size: 2.6rem;
+  }
+
+  .return-text {
+    font-size: 1.2rem;
+  }
+
+  .aboutus-header {
+    font-size: 2.2rem;
+  }
+
+  .aboutus-email {
+    font-size: 1.4rem;
+  }
+
+  .aboutus-text {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutus-email {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .aboutus-email {
+    font-size: 1rem;
+  }
+}

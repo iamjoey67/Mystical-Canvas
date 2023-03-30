@@ -1,0 +1,324 @@
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+-Font sizes (rem)
+1.0 / 1.2 / 1.4 / 1.6 / 1.8 / 2.0
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+- Letter spacing
+-0.5px
+0.75px
+
+Color Pallet:
+#8865ff
+#6c50cc
+#FF6FA5
+#FFDAC0
+#D3D3D3
+#000000
+#fdf2e9
+-----
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9)
+#555
+#333
+ */
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Lato:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* This makes it so we can use rem, making all numbers equal */
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+  line-height: 1.2;
+  font-weight: 400;
+  background-color: #fdf2e9;
+  overflow-x: hidden;
+}
+
+/************************************/
+/* GENERAL USE*/
+/************************************/
+
+.btn:link,
+.btn:visited {
+  transition: all 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:active {
+  color: #ff6fa5;
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.starter-container {
+  margin-bottom: 4.8rem;
+  max-width: auto;
+}
+
+.p {
+  padding: 1.2rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5rem;
+}
+
+/************************************/
+/* Announcement*/
+/************************************/
+
+.announcement {
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to right, #8865ff, #ff6fa5);
+}
+
+.announcement-text {
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #000;
+}
+
+/************************************/
+/* HEADER, logo with menu/cart */
+/************************************/
+
+/* Styles for header buttons */
+.btn-btn {
+  height: 6.6rem;
+  width: 6.6rem;
+  border-radius: 0.75rem;
+  color: #8865ff;
+  background-color: #000;
+  border-style: none;
+}
+
+.btn-btn:active {
+  color: #50c878;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.showing {
+  display: flex;
+  transition: all 2.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header-img {
+  height: 12rem;
+}
+
+/* Text under image */
+.h1-header-image-text {
+  font-size: 3.2rem;
+  font-family: Itim;
+  background-image: linear-gradient(to right, #8865ff, #ff6fa5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.image-text {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  background-color: #333;
+  border: 1px solid transparent;
+}
+
+/* Moon and  Sprit */
+
+.moon-sprit,
+.sun-sprit {
+  color: #ffdac0;
+  width: auto;
+  height: 6.6rem;
+  margin: auto;
+}
+.moon-sprit {
+}
+
+.sun-sprit {
+}
+
+/************************************/
+/* Advertisement*/
+/************************************/
+
+.ads {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Images */
+.ad-img {
+  height: 25rem;
+}
+
+.img-left {
+  margin-left: 0rem;
+  margin-bottom: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.img-right {
+  margin-right: 0rem;
+  margin-bottom: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+/* Text and button */
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+
+  margin: 1rem;
+}
+
+.ad-h1 {
+  font-size: 3rem;
+  text-align: center;
+  border-bottom: #000 solid 2px;
+
+  margin-bottom: 1rem;
+}
+.ad-text {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+.ad-button {
+  height: 7rem;
+  width: 18rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  background-color: #8865ff;
+  color: #fff;
+}
+
+.ad-button:hover,
+.ad-button:active {
+  background-color: #ff6fa5;
+  color: #000;
+  cursor: pointer;
+}
+
+/************************************/
+/* Media Queries, */
+/************************************/
+@media (max-width: 900px) {
+  .ad-img {
+    height: 21rem;
+  }
+
+  .ad-h1 {
+    font-size: 2.2rem;
+  }
+
+  .ad-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .ad-img {
+    height: 20rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .ad-img {
+    height: 17rem;
+  }
+}
+
+/* Changes to rows
+ */
+@media (max-width: 550px) {
+  .ads {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .img-container {
+    display: flex;
+    margin: 0.9rem auto;
+    gap: 2rem;
+  }
+
+  .ad-img {
+    height: 24rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .ad-img {
+    height: 22rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .ad-img {
+    height: 20rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .ad-img {
+    height: 17rem;
+  }
+
+  .ad-h1 {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .ad-img {
+    height: 15rem;
+  }
+}

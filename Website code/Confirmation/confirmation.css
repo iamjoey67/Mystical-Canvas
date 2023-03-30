@@ -1,0 +1,215 @@
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+-Font sizes (rem)
+1.0 / 1.2 / 1.4 / 1.6 / 1.8 / 2.0
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+- Letter spacing
+-0.5px
+0.75px
+
+Color Pallet:
+#8865ff
+#6c50cc
+#FF6FA5
+#FFDAC0
+#D3D3D3
+#000000
+#fdf2e9
+-----
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9)
+#555
+#333
+ */
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Lato:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* This makes it so we can use rem, making all numbers equal */
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+  line-height: 1.2;
+  font-weight: 400;
+  background-color: #fdf2e9;
+  overflow-x: hidden;
+}
+
+/************************************/
+/* GENERAL USE*/
+/************************************/
+
+.btn:link,
+.btn:visited {
+  transition: all 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:active {
+  color: #ff6fa5;
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.starter-container {
+  margin-bottom: 4.8rem;
+  max-width: auto;
+}
+
+.p {
+  padding: 1.2rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5rem;
+}
+
+/************************************/
+/* Thank you message + home button*/
+/************************************/
+
+.thankyou-card {
+  display: flex;
+  margin: 17rem;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.thankyou-h1 {
+  font-size: 3.2rem;
+  text-align: center;
+  padding: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: #000 solid 2px;
+  margin-bottom: 1.6rem;
+}
+
+.thankyou-text {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.thankyou-text2 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  margin-top: -1rem;
+  color: #555;
+}
+
+.thankyou-btn {
+  height: 6.6rem;
+  width: 20rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  background-color: #8865ff;
+  color: #fff;
+}
+
+.thankyou-btn:hover,
+.thankyou-btn:active {
+  background-color: #ff6fa5;
+  color: #000;
+  cursor: pointer;
+}
+
+/************************************/
+/* Media Queries, */
+/************************************/
+
+@media (max-width: 1200px) {
+  .thankyou-card {
+    margin: 32rem 3rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .thankyou-card {
+    margin: 25rem 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .thankyou-card {
+    margin: 16rem 6rem;
+  }
+
+  .thankyou-h1 {
+    font-size: 2.4rem;
+  }
+
+  .thankyou-text {
+    font-size: 2rem;
+  }
+
+  .thankyou-text2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .thankyou-card {
+    margin: 12rem 6rem;
+  }
+
+  .thankyou-h1 {
+    font-size: 1.8rem;
+  }
+
+  .thankyou-text {
+    font-size: 1.6rem;
+  }
+
+  .thankyou-text2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .thankyou-card {
+    margin: 12rem 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .thankyou-card {
+    margin: 10rem 2rem;
+  }
+}
+@media (max-width: 300px) {
+  .thankyou-card {
+    margin: 8rem 2rem;
+  }
+}

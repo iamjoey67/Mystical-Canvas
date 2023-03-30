@@ -1,0 +1,723 @@
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+-Font sizes (rem)
+1.0 / 1.2 / 1.4 / 1.6 / 1.8 / 2.0
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+- Letter spacing
+-0.5px
+0.75px
+
+Color Pallet:
+#8865ff
+#6c50cc
+#FF6FA5
+#FFDAC0
+#D3D3D3
+#000000
+#fdf2e9
+-----
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9)
+#555
+#333
+ */
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Lato:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* This makes it so we can use rem, making all numbers equal */
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+  line-height: 1.2;
+  font-weight: 400;
+  background-color: #fdf2e9;
+  overflow-x: hidden;
+}
+
+/************************************/
+/* GENERAL USE*/
+/************************************/
+
+.btn:link,
+.btn:visited {
+  transition: all 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:active {
+  color: #ff6fa5;
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.starter-container {
+  margin-bottom: 4.8rem;
+  max-width: auto;
+}
+
+.p {
+  padding: 1.2rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5rem;
+}
+
+/************************************/
+/* Announcement*/
+/************************************/
+
+.announcement {
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to right, #8865ff, #ff6fa5);
+}
+
+.announcement-text {
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #000;
+}
+
+/************************************/
+/* HEADER, logo with menu/cart */
+/************************************/
+
+/* Styles for header buttons */
+.btn-btn {
+  height: 6.6rem;
+  width: 6.6rem;
+  border-radius: 0.75rem;
+  color: #8865ff;
+  background-color: #000;
+  border-style: none;
+}
+
+.btn-btn:active {
+  color: #50c878;
+}
+.header {
+  background-color: #333;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.menu {
+  margin: auto;
+  position: relative;
+}
+
+.menu-btn {
+  padding: 0.5rem;
+}
+
+.menu-on {
+  background-color: #ffdac0;
+}
+
+.cart {
+  margin: auto;
+}
+
+.header-img {
+  height: 12rem;
+}
+
+/* Text under image */
+.h1-header-image-text {
+  font-size: 3.2rem;
+  font-family: Itim;
+  background-image: linear-gradient(to right, #8865ff, #ff6fa5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.image-text {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  background-color: #333;
+  border: 1px solid transparent;
+}
+/* Messes with the headers links */
+.links:link,
+.links:visited {
+  display: flex;
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  font-size: 2rem;
+  transition: all 0.3s;
+  margin-bottom: 1.1rem;
+}
+.links:hover,
+.links:active {
+  color: #8865ff;
+}
+
+.buttons-holder {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Moon and  Sprit */
+
+.moon-sprit,
+.sun-sprit {
+  color: #ffdac0;
+  width: auto;
+  height: 6.6rem;
+  margin: auto;
+}
+
+/* This is the text on the left */
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.back-text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffdac0;
+  text-align: center;
+  margin-right: 2.5rem;
+}
+
+/************************************/
+/*Checkout details */
+/************************************/
+
+.item-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.item-checkout-h1 {
+  font-size: 3.2rem;
+  text-align: center;
+  padding: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: #000 solid 2px;
+  margin: auto 45rem;
+  margin-bottom: 2rem;
+}
+
+.items-list {
+  list-style: none;
+}
+
+.checkout-item {
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+}
+
+.total {
+  margin: 0.7rem;
+  font-size: 3.6rem;
+  font-weight: 700;
+
+  background-image: linear-gradient(to right, #8865ff, #ff6fa5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px black;
+}
+/************************************/
+/*Shipping details */
+/************************************/
+.shipping {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin: auto 10rem;
+  padding: auto 2rem;
+}
+
+.shipping-h1 {
+  font-size: 3.2rem;
+  text-align: center;
+  padding: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: #000 solid 2px;
+  margin: auto 45rem;
+  margin-bottom: 2rem;
+}
+
+.special-text {
+  font-size: 1.2rem;
+}
+
+.label-containers {
+  display: flex;
+  flex-direction: column;
+}
+.all-labels {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.all-inputs {
+  padding: 0.6rem;
+  margin: 0 1rem;
+
+  background-color: #000;
+  color: #fdf2e9;
+  border: #8865ff solid 2px;
+}
+
+.all-inputs:hover {
+  border: #ff6fa5 solid 2px;
+}
+
+.shipping-btn-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  margin-top: 2rem;
+}
+
+.disclaimer {
+  font-size: 1.2rem;
+}
+
+.shipping-btn {
+  height: 5.8rem;
+  width: 20rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  background-color: #8865ff;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.shipping-btn:hover,
+.shipping-btn:active {
+  background-color: #ff6fa5;
+  color: #000;
+  cursor: pointer;
+}
+
+/************************************/
+/*Lack of shipping details popup */
+/************************************/
+
+.popup-shipping {
+  background-color: #222;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: 999;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 98%;
+}
+
+.popup-open {
+  visibility: visible;
+}
+
+.popup-card {
+  background-color: #d3d3d3;
+  border: 2px solid #000;
+  width: 50rem;
+  border-radius: 11px;
+
+  padding: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-text {
+  font-weight: 700;
+  font-size: 2.8rem;
+
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.popup-back-btn {
+  height: 6.6rem;
+  width: 20rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  background-color: #8865ff;
+  color: #fff;
+}
+
+.popup-back-btn:hover,
+.popup-back-btn:active {
+  background-color: #ff6fa5;
+  color: #000;
+  cursor: pointer;
+}
+
+.selected-fields {
+  font-weight: 400;
+  font-size: 2.6rem;
+
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  text-align: center;
+  list-style: none;
+}
+
+.selected-fields li {
+  padding: 0.2rem;
+}
+
+/************************************/
+/*Hidden form that sends email */
+/************************************/
+#my-form {
+  display: none;
+}
+/************************************/
+/*Payment details */
+/************************************/
+.paypal {
+  margin: 1rem;
+  padding: 4rem;
+
+  pointer-events: none;
+}
+
+.payment-h1 {
+  font-size: 3.2rem;
+  text-align: center;
+  padding: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: #000 solid 2px;
+  margin: auto 45rem;
+  margin-bottom: 2rem;
+}
+
+/* Closed payment section */
+.payment-opened {
+  pointer-events: all;
+}
+
+/************************************/
+/* Footer, */
+/************************************/
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #d3d3d3;
+
+  padding: 2rem;
+  padding-bottom: 5rem;
+}
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+
+  align-items: center;
+}
+
+.h1-footer {
+  font-weight: 700;
+  font-size: 2rem;
+
+  border-bottom: 1px solid #000;
+}
+.p-footer {
+  font-weight: 400;
+  font-size: 1.6rem;
+
+  text-decoration: none;
+  color: #333;
+}
+
+.p-footer:hover {
+  color: #8865ff;
+}
+
+.footer-img {
+  height: 12rem;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #000;
+}
+
+/************************************/
+/* Media Queries, */
+/************************************/
+
+@media (max-width: 1100px) {
+  .item-checkout-h1 {
+    margin: auto 28rem;
+    margin-bottom: 2rem;
+  }
+  .shipping-h1 {
+    margin: auto 35rem;
+    margin-bottom: 2rem;
+  }
+
+  .payment-h1 {
+    margin: auto 35rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .item-checkout-h1 {
+    font-size: 3rem;
+  }
+
+  .shipping-h1 {
+    margin: auto 28rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
+
+  .all-labels {
+    padding: 0.5rem;
+  }
+
+  .payment-h1 {
+    margin: auto 28rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
+
+  #smart-button-container {
+    margin: auto 6rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .shipping-h1 {
+    margin: auto 24rem;
+    margin-bottom: 2rem;
+  }
+
+  .payment-h1 {
+    margin: auto 20rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .header {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .moon-sprit {
+    display: none;
+  }
+
+  .sun-sprit {
+    display: none;
+  }
+
+  .shipping-h1 {
+    margin: auto 20rem;
+    margin-bottom: 3rem;
+  }
+
+  .label-container2 {
+    margin-top: -2rem;
+  }
+
+  .payment-h1 {
+    margin: auto 20rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 570px) {
+  .back-text {
+    font-size: 1.6rem;
+  }
+
+  .shipping-h1 {
+    margin: auto 14rem;
+    margin-bottom: 3rem;
+  }
+
+  .shipping {
+    margin: auto 6rem;
+  }
+
+  .payment-h1 {
+    margin: auto 17rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 530px) {
+  .item-checkout-h1 {
+    font-size: 2.6rem;
+  }
+
+  .total {
+    font-size: 3.2rem;
+  }
+
+  .shipping-h1 {
+    font-size: 2.6rem;
+  }
+
+  .payment-h1 {
+    font-size: 2.6rem;
+  }
+
+  .h1-footer {
+    font-size: 1.8rem;
+  }
+
+  .footer-img {
+    height: 10rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .shipping {
+    margin: auto 4rem;
+  }
+
+  .payment-h1 {
+    margin: auto 12rem;
+    margin-bottom: 2rem;
+  }
+
+  .h1-footer {
+    font-size: 1.4rem;
+  }
+
+  .p-footer {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .shipping {
+    margin: auto 1rem;
+  }
+  .shipping-h1 {
+    margin: auto 9rem;
+    margin-bottom: 3rem;
+  }
+
+  .all-labels {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+  }
+
+  .all-inputs {
+    padding: 0.2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .back-text {
+    margin-right: 0.5rem;
+    font-size: 1.4rem;
+  }
+
+  .checkout-item {
+    font-size: 2rem;
+  }
+
+  .shipping-h1 {
+    margin: auto 9rem;
+    margin-bottom: 3rem;
+  }
+
+  .shipping {
+    margin: auto 0rem;
+  }
+
+  .all-labels {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+  }
+
+  .all-inputs {
+    padding: 0.2rem;
+  }
+
+  .payment-h1 {
+    margin: auto 8rem;
+    margin-bottom: 2rem;
+  }
+
+  .h1-footer {
+    margin: -1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .header {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .back {
+    display: none;
+  }
+
+  .footer-shippingpolicy {
+    margin-left: -3rem;
+  }
+}

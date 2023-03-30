@@ -1,0 +1,967 @@
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+-Font sizes (rem)
+1.0 / 1.2 / 1.4 / 1.6 / 1.8 / 2.0
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+- Letter spacing
+-0.5px
+0.75px
+
+Color Pallet:
+#8865ff
+#6c50cc
+#FF6FA5
+#FFDAC0
+#D3D3D3
+#000000
+#fdf2e9
+-----
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9)
+#555
+#333
+ */
+@import url("https://fonts.googleapis.com/css2?family=Itim&family=Lato:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* This makes it so we can use rem, making all numbers equal */
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+  line-height: 1.2;
+  font-weight: 400;
+  background-color: #fdf2e9;
+  overflow-x: hidden;
+}
+
+/************************************/
+/* GENERAL USE*/
+/************************************/
+
+.btn:link,
+.btn:visited {
+  transition: all 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:active {
+  color: #ff6fa5;
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.starter-container {
+  margin-bottom: 4.8rem;
+  max-width: auto;
+}
+
+.p {
+  padding: 1.2rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5rem;
+}
+
+/************************************/
+/* Announcement*/
+/************************************/
+
+.announcement {
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to right, #8865ff, #ff6fa5);
+}
+
+.announcement-text {
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #000;
+}
+
+/************************************/
+/* HEADER, logo with menu/cart */
+/************************************/
+
+/* Styles for header buttons */
+.btn-btn {
+  height: 6.6rem;
+  width: 6.6rem;
+  border-radius: 0.75rem;
+  color: #8865ff;
+  background-color: #000;
+  border-style: none;
+}
+
+.btn-btn:active {
+  color: #50c878;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.menu {
+  margin: auto;
+  position: relative;
+}
+
+.menu-on {
+  background-color: #ffdac0;
+}
+
+.hide {
+  display: none;
+  flex-direction: column;
+  gap: 2.3rem;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6rem;
+  background-color: #ffdac0;
+  border-right: 0.5rem solid #333;
+  border-bottom: 0.5rem solid #333;
+
+  position: absolute;
+  z-index: 2;
+}
+
+.showing {
+  display: flex;
+  transition: all 2.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cart {
+  margin: auto;
+}
+
+.header-img {
+  height: 12rem;
+}
+
+/* Text under image */
+.h1-header-image-text {
+  font-size: 3.2rem;
+  font-family: Itim;
+  background-image: linear-gradient(to right, #8865ff, #ff6fa5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.image-text {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  background-color: #333;
+  border: 1px solid transparent;
+}
+/* Messes with the headers links */
+.links:link,
+.links:visited {
+  display: flex;
+  text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  font-size: 2rem;
+  transition: all 0.3s;
+  margin-bottom: 1.1rem;
+}
+.links:hover,
+.links:active {
+  color: #8865ff;
+}
+
+.buttons-holder {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Moon and  Sprit */
+
+.moon-sprit,
+.sun-sprit {
+  color: #ffdac0;
+  width: auto;
+  height: 6.6rem;
+  margin: auto;
+}
+.moon-sprit {
+}
+
+.sun-sprit {
+}
+
+/* This is for the cart number icon*/
+.cart-items {
+  position: absolute;
+  top: 9.5%;
+  right: 4.5%;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  color: #8865ff;
+  background-color: #ffdac0;
+  padding: 1.2rem 1.6rem;
+  border-radius: 50%;
+  border: 1px solid #000;
+  z-index: 99;
+  transition: all 0.2s;
+
+  visibility: hidden;
+}
+
+.cart-items-display {
+  visibility: visible;
+}
+
+/************************************/
+/* Intro to the site */
+/************************************/
+.intro {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.intro-img {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  order: -1;
+}
+
+.intro-img-text {
+  position: absolute;
+  align-self: center;
+  bottom: 42%;
+}
+.h1-intro {
+  color: #fdf2e9;
+  margin-left: 5.6rem;
+  font-size: 6.2rem;
+}
+
+.p-intro {
+  color: #fdf2e9;
+  font-size: 1.8rem;
+  margin-left: 15rem;
+}
+
+.btn-intro {
+  height: 4.8rem;
+  width: auto;
+  margin-left: 25.6rem;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  padding: 1.75rem 2.75rem;
+  border-radius: 0.75rem;
+
+  border: 1px solid transparent;
+  background-color: #8865ff;
+  color: #fff;
+}
+.btn-intro:hover,
+.btn-intro:active {
+  background-color: #ff6fa5;
+  border: 1px solid transparent;
+  color: #000;
+}
+
+/************************************/
+/* INTRO BOTTOM, the bottom text under intro pic*/
+/************************************/
+.intro-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.75rem;
+}
+.h1-bottom-intro {
+  padding: 1.8rem;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #555;
+}
+.p-bottom-intro {
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #555;
+}
+
+.p-intro-quote {
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #555;
+}
+/************************************/
+/* SHOWCASE, pictures of product*/
+/************************************/
+.showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 5.5rem;
+  gap: 2rem;
+
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+/* We put the image/text combo and put them
+in a div then the whole into a grid. */
+.show1,
+.show2 {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.show2 {
+  flex-direction: column;
+}
+
+/* How big the 3 images are in 
+the showcase section */
+.img-show1,
+.img-show2,
+.img-show3 {
+  width: auto;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 5px outset #dbd1ff;
+}
+
+.p-show,
+.p-show,
+.p-show {
+  padding: 1rem;
+  font-weight: 400;
+  font-size: 2.3rem;
+  color: #555;
+}
+
+.p-show2 {
+  text-align: center;
+}
+/* This is the button */
+.btn-show {
+  width: auto;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 2rem 2rem;
+  padding: 1.75rem 2.75rem;
+  border-radius: 0.75rem;
+  grid-column-start: 2;
+  cursor: pointer;
+  justify-self: center;
+  border: 1px solid transparent;
+  background-color: #8865ff;
+  color: #fff;
+  transition: all 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.btn-show:hover,
+.btn-show:active {
+  background-color: #ff6fa5;
+  color: #000;
+  cursor: pointer;
+}
+
+/************************************/
+/* BENEFITS, 2 cards about the product*/
+/************************************/
+.benefits {
+  display: flex;
+  gap: 4.2rem;
+
+  margin: auto 10rem;
+}
+
+.benefit-card-general {
+  box-shadow: 0 2.4rem 4.8rem rgb(0 0 0 / 8%);
+  border-radius: 11px;
+  overflow: hidden;
+  border-radius: 11px;
+  border: 2px solid #8865ff;
+  width: 75%;
+  height: auto;
+
+  padding: 4.6rem;
+}
+
+.canvas-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2rem;
+
+  background-color: #d3d3d3;
+}
+
+.h1-benefits {
+  font-weight: 700;
+  font-size: 3.2rem;
+  border-bottom: 2px solid #000;
+}
+
+/* Used for prices, benefits and description */
+.benefit-text {
+  font-weight: 400;
+  font-size: 2rem;
+  list-style: none;
+
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+
+.benefit-list {
+  line-height: 2;
+  font-weight: 700;
+}
+
+/* Moon and Sun icons */
+
+.moon-sun-icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 2.6rem;
+}
+
+/* Repeative code for the color changing transition,
+could possibly do in javascript...lets see */
+
+.color1:hover {
+  color: #ffa9c9;
+  cursor: default;
+}
+.color2:hover {
+  color: #523d99;
+  cursor: default;
+}
+.color3:hover {
+  color: #ff7dae;
+  cursor: default;
+}
+.color4:hover {
+  color: #7a5be6;
+  cursor: default;
+}
+.color5:hover {
+  color: #e66495;
+  cursor: default;
+}
+.color6:hover {
+  color: #9474ff;
+  cursor: default;
+}
+.color7:hover {
+  color: #b34e73;
+  cursor: default;
+}
+
+/************************************/
+/* Testimonial, */
+/************************************/
+
+.testimonial {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4.2rem;
+  margin-top: 7rem;
+  margin-bottom: 1.6rem;
+
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.down-imgs-testimonial {
+  padding-top: 5.5rem;
+}
+
+.img-testimonial {
+  height: auto;
+  width: auto;
+
+  border: 5px outset #dbd1ff;
+}
+
+.p-testimonial {
+  font-weight: 400;
+  font-size: 2.4rem;
+
+  padding: 0.75rem;
+  text-align: center;
+}
+
+/* Button at the bottom of the testimonial */
+.btn-testimonial {
+  height: 6.6rem;
+  width: 20rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  border: 1px solid transparent;
+  background-color: #8865ff;
+  color: #fff;
+}
+
+.btn-testimonial:hover,
+.btn-testimonial:active {
+  background-color: #ff6fa5;
+  color: #000;
+  cursor: pointer;
+}
+
+.testimonial-btn-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/************************************/
+/* Stickers, */
+/************************************/
+
+.stickers {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #bebebe;
+  padding-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.stickers-holder {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.stickers-text {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.sticker-img {
+  height: 10rem;
+  width: 10rem;
+}
+
+/************************************/
+/* Footer, */
+/************************************/
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #d3d3d3;
+
+  padding: 2rem;
+  padding-bottom: 5rem;
+}
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6rem;
+
+  align-items: center;
+}
+
+.h1-footer {
+  font-weight: 700;
+  font-size: 2rem;
+
+  border-bottom: 1px solid #000;
+}
+.p-footer {
+  font-weight: 400;
+  font-size: 1.6rem;
+
+  text-decoration: none;
+  color: #333;
+}
+
+.p-footer:hover {
+  color: #8865ff;
+}
+
+.footer-img {
+  height: 12rem;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #000;
+}
+
+/************************************/
+/* Media Queries, */
+/************************************/
+@media (max-width: 1200px) {
+}
+@media (max-width: 1100px) {
+  .benefit-card-general {
+    height: auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .p-testimonial {
+    display: none;
+  }
+
+  p.benefit-text {
+    display: none;
+  }
+
+  .benefit-card-general {
+    height: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .p-show {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .h1-benefits {
+    font-size: 2.6rem;
+  }
+
+  .list-item {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .h1-benefits {
+    font-size: 2rem;
+  }
+
+  .list-item {
+    font-size: 1.6rem;
+  }
+
+  .h1-intro {
+    font-size: 5.8rem;
+  }
+
+  .p-intro {
+    margin-left: 13rem;
+  }
+
+  .btn-intro {
+    margin-left: 22.6rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .h1-benefits {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .benefits {
+    margin: auto 4rem;
+  }
+
+  .testimonial {
+    gap: 2rem;
+  }
+
+  .btn-show {
+    width: 13.7rem;
+    height: 6rem;
+  }
+
+  .header {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .p-show {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .moon-sprit {
+    display: none;
+  }
+  .sun-sprit {
+    display: none;
+  }
+
+  .h1-intro {
+    font-size: 4.4rem;
+  }
+
+  .p-intro {
+    margin-left: 7rem;
+  }
+
+  .btn-intro {
+    margin-left: 16.5rem;
+  }
+
+  .img-show2 {
+    width: 14rem;
+  }
+
+  .showcase {
+    margin: auto 1.5rem;
+    margin-top: 3rem;
+    gap: 1rem;
+  }
+
+  .p-show1 {
+    padding: 0;
+    padding-bottom: 1rem;
+  }
+
+  .benefit-card-general {
+    padding: 2.2rem;
+  }
+
+  .testimonial {
+    margin-top: 3rem;
+  }
+
+  .sticker-img {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .h1-footer {
+    font-size: 1.8rem;
+  }
+
+  .footer-img {
+    height: 10rem;
+  }
+
+  .p-show {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-img {
+    height: 10rem;
+  }
+
+  .btn-btn {
+    height: 5.6rem;
+    width: 5.6rem;
+  }
+
+  .intro-img-text {
+    bottom: 30%;
+  }
+
+  .h1-intro {
+    font-size: 3.8rem;
+  }
+
+  .p-intro {
+    font-size: 1.6rem;
+    margin-left: 6rem;
+  }
+
+  .btn-intro {
+    margin-left: 13.5rem;
+  }
+
+  .h1-bottom-intro {
+    font-size: 1.8rem;
+  }
+
+  .p-bottom-intro {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .img-show2 {
+    width: 12rem;
+  }
+
+  .show1 {
+    margin: auto -1rem;
+  }
+
+  .p-show1 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .p-show2 {
+    font-weight: 700;
+  }
+
+  .p-show3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .benefits {
+    margin: auto 1rem;
+  }
+
+  .list-item {
+    font-size: 1.2rem;
+  }
+
+  .sticker-img {
+    height: 5rem;
+    width: 5rem;
+  }
+
+  .h1-footer {
+    font-size: 1.4rem;
+  }
+
+  .p-footer {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .h1-intro {
+    font-size: 2.6rem;
+    margin-left: 3.5rem;
+  }
+
+  .p-intro {
+    font-size: 1.2rem;
+    margin-left: 2rem;
+  }
+
+  .btn-intro {
+    margin-left: 7.5rem;
+  }
+
+  .h1-bottom-intro {
+    font-size: 1.4rem;
+  }
+
+  .p-bottom-intro {
+    font-size: 1rem;
+  }
+
+  .p-intro-quote {
+    font-size: 1.2rem;
+  }
+
+  .img-show2 {
+    width: 10rem;
+  }
+
+  .p-show {
+    display: none;
+  }
+
+  .btn-show {
+    margin: 2rem 1rem;
+    width: 11.7rem;
+    padding: 0.75rem 2.75rem;
+  }
+
+  .benefits {
+    gap: 2rem;
+  }
+
+  .h1-benefits {
+    font-size: 1.6rem;
+  }
+
+  .list-item {
+    font-size: 0.9rem;
+  }
+
+  .moon-sun-icon {
+    height: 1rem;
+    width: 1rem;
+  }
+
+  .testimonial {
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .btn-testimonial {
+    height: 6rem;
+    width: 13rem;
+  }
+
+  .starter-container {
+    margin-bottom: 3rem;
+  }
+
+  .h1-footer {
+    font-size: 1rem;
+  }
+
+  .p-footer {
+    font-size: 0.8rem;
+  }
+
+  .footer-img {
+    height: 6rem;
+  }
+}

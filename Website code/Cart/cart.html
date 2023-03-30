@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="cartStyle.css" />
+    <link rel="icon" href="/images/Fiverr Canvas for Mystical Canvas.png" />
+  </head>
+  <body>
+    <div class="announcement">
+      <p class="announcement-text">Free Shipping 💖</p>
+    </div>
+
+    <header class="header">
+      <!-- Menu button -->
+      <menu class="menu">
+        <div class="buttons-holder">
+          <button class="menu-btn btn btn-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </menu>
+
+      <!-- Moon sprit -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="moon-sprit"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+        />
+      </svg>
+
+      <!-- This combines the header image and text -->
+      <button class="image-text">
+        <!-- Logo Image -->
+        <img
+          src="/images/Fiverr Canvas for Mystical Canvas.png"
+          alt="The Mystical Realm Logo"
+          class="header-img"
+        />
+
+        <!-- Text under image -->
+        <h1 class="h1-header-image-text">Mystical Canvas</h1>
+      </button>
+      <!-- Sun sprit -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="sun-sprit"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+        />
+      </svg>
+
+      <!--Cart Button-->
+      <cart-btn class="cart-btn">
+        <button class="btn cart-btn btn-btn" id="cart-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+            />
+          </svg>
+        </button>
+      </cart-btn>
+      <p id="my-paragraph" class="cart-items">0</p>
+    </header>
+
+    <!-- The 3 links for the scroll down section -->
+    <div class="hide">
+      <a href="../Landing/index.html" class="links">Home</a>
+      <a href="../Product/product.html" class="links">Products</a>
+      <a href="../About us/aboutus.html#aboutus" class="links">Contact us</a>
+    </div>
+
+    <cart class="cart">
+      <!-- h1, gets hidden when a item gets added -->
+      <h1 class="h1-cart h1-cart-hidden">Nothing in cart...</h1>
+      <container class="cart-contents" id="cart-contents"> </container>
+      <button id="checkout-btn" class="checkout-btn">Checkout</button>
+      <disclaimer class="disclaimer"
+        >Disclaimer: Cart will reset if you go back to the product page.
+      </disclaimer>
+
+      <!-- Popup for when cart is clicked again -->
+      <popup class="popup" id="popup">
+        <div class="popup-card">
+          <h1 class="popup-text">You are in the cart 😊</h1>
+          <p class="popup-disclaimer">
+            Disclaimer: Cart will reset if you go back to the product page.
+          </p>
+          <button type="submit" id="popup-close" class="btn-btn btn close-btn">
+            Close
+          </button>
+        </div>
+      </popup>
+
+      <!-- Pop up when checkout is clicked -->
+      <checkout class="checkout-popup">
+        <div class="checkout-card">
+          <h1 class="checkout-h1">
+            This will be the final time you are allowed to edit the cart.
+          </h1>
+          <h1 class="checkout-text">Are you Sure?</h1>
+          <div class="btn-wrap">
+            <button class="no-button btn-btn">Back</button>
+            <button class="yes-button btn-btn">Continue</button>
+          </div>
+        </div>
+      </checkout>
+    </cart>
+
+    <!-- Coming soon section -->
+    <coming-soon class="coming-soon">
+      <div class="coming-soon-h1-holder">
+        <h1 class="coming-soon-h1">Coming soon</h1>
+      </div>
+      <div class="coming-soon-holder">
+        <img
+          src="/images/Product Pictures/Coming soon/Mushroom land.png"
+          alt="Picture of Product"
+          class="coming-soon-img"
+        />
+        <img
+          src="/images/Product Pictures/Coming soon/Canvas poof.png"
+          alt="Picture of Product"
+          class="coming-soon-img"
+        />
+        <img
+          src="/images/Product Pictures/Coming soon/To the new land.png"
+          alt="Picture of Product"
+          class="coming-soon-img"
+        />
+      </div>
+    </coming-soon>
+
+    <footer class="footer">
+      <div class="footer-section">
+        <h1 class="h1-footer">Terms and policies</h1>
+        <a href="../About us/aboutus.html#return" class="p-footer footer-30day"
+          >30 day return policy</a
+        >
+        <a
+          href="../About us/aboutus.html"
+          class="p-footer footer-shippingpolicy"
+          >Shipping policy</a
+        >
+      </div>
+      <div class="footer-section">
+        <h1 class="h1-footer">About us</h1>
+        <a href="../About us/aboutus.html#aboutus" class="p-footer"
+          >Contact us</a
+        >
+      </div>
+      <a href="../Landing/index.html" class="footer-section footer-link">
+        <h1 class="h1-footer">Subscribe</h1>
+        <img
+          src="/images/Fiverr Canvas for Mystical Canvas.png"
+          alt="The Mystical Realm Logo"
+          class="footer-img"
+        />
+      </a>
+    </footer>
+    <script src="cartJs.js"></script>
+  </body>
+</html>
